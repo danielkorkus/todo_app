@@ -1,11 +1,12 @@
 import React from "react";
 import ListGroup from "react-bootstrap/ListGroup";
 
-export default function TodoList() {
+export default function TodoList(todos = []) {
     return <ListGroup>
-        <ListGroup.Item>1</ListGroup.Item>
-        <ListGroup.Item>2</ListGroup.Item>
-        <ListGroup.Item>3</ListGroup.Item>
+        {todos.map(t => {
+            return <ListGroup.Item key={t.id}>
+                {t.name}
+            </ListGroup.Item>
+        })}
     </ListGroup>
-
 }
